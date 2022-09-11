@@ -1,0 +1,20 @@
+from itertools import count
+
+student_heights = input("Input a list of student heights ").split()
+for n in range(0, len(student_heights)):
+  student_heights[n] = int(student_heights[n])
+
+add=0
+count=0
+
+
+for h in student_heights:
+  add = add + h
+  count+=1
+
+print(count)
+print(add)
+
+avg = add/count
+
+print(avg)

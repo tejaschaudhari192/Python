@@ -1,0 +1,1 @@
+print("Bhoju"[2])
