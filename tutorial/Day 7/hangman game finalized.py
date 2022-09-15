@@ -1,22 +1,22 @@
 import os
 import random
-game_over=True
+game_over = True
 
 
-chosen_word ="chaudhari"
+chosen_word = "chaudhari"
 
-#Testing code
+# Testing code
 print(f'Pssst, the solution is {chosen_word}.')
 
 
-#creating blank list
-wordlist=[]
+# creating blank list
+wordlist = []
 for char in chosen_word:
-    wordlist+="-"
+    wordlist += "-"
 
-j=0
+j = 0
 
-logo=''' 
+logo = ''' 
                                                                               
 88                                                                            
 88                                                                            
@@ -34,7 +34,7 @@ print("\n\n\n\nYoy Have 6 Lives to play this game")
 print("Guess the correct letter in word to win the game")
 
 
-hanger=['''
+hanger = ['''
   +---+
   |   |
       |
@@ -42,7 +42,7 @@ hanger=['''
       |
       |
 =========
-''','''
+''', '''
   +---+
   |   |
   O   |
@@ -81,7 +81,7 @@ hanger=['''
  /    |
       |
 =========
-''','''
+''', '''
   +---+
   |   |
   O   |
@@ -91,34 +91,34 @@ hanger=['''
 =========
 ''']
 
-win=False
-i=0
-while i<=6:
+win = False
+i = 0
+while i <= 6:
     print(hanger[i])
     guess = input("Guess a letter: ").lower()
-    k=0
+    k = 0
     for char in range(len(wordlist)):
-        if chosen_word[char]== guess:
-            wordlist[char]=" "+guess
-            k+=1
+        if chosen_word[char] == guess:
+            wordlist[char] = " "+guess
+            k += 1
 
-    if k==0:
-      print(f"\nWrong guess Remaining Lives {6-i}")
-      i+=1
+    if k == 0:
+        print(f"\nWrong guess Remaining Lives {6-i}")
+        i += 1
     else:
-      print("\nCorrect Guess")
-    
-    display=""
+        print("\nCorrect Guess")
+
+    display = ""
 
     for char in wordlist:
-      display+=char
+        display += char
 
     print(display)
-    j+=1
+    j += 1
 
     if "-" not in wordlist:
         win = True
-        i=10
+        i = 10
 
 if win:
     print("Won beti")

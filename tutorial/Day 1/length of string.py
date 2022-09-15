@@ -1,1 +1,1 @@
-print("Length of string is" , len(input("Enter String : ")))
+print("Length of string is", len(input("Enter String : ")))

@@ -26,16 +26,16 @@ scissor = '''
       (____)
 ---.__(___)
 '''
-choice = [rock,paper,scissor]
+choice = [rock, paper, scissor]
 p = int(input("enter 1 for rock, 2 for paper & 3 for Scissor to choose"))
 
-c = random.randint(1,3)
+c = random.randint(1, 3)
 
-if p>3 or p<1:
+if p > 3 or p < 1:
     print("enter valid input...")
-else :
+else:
     print("You :")
-    print(choice[p-1]) #-1 bcoz index value stars from 0
+    print(choice[p-1])  # -1 bcoz index value stars from 0
     print("Computer :")
     print(choice[c-1])
 
@@ -49,4 +49,3 @@ else :
         print("You win")
     else:
         print("You lose")
-

@@ -1,7 +1,9 @@
-import  math
+import math
 
-def paint_calc(height,width,cover):
+
+def paint_calc(height, width, cover):
     print(f"You'll need {math.ceil(cover)} cans of paint.")
+
 
 test_h = int(input("Height of wall: "))
 test_w = int(input("Width of wall: "))
