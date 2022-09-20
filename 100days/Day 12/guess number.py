@@ -21,9 +21,8 @@ else:
     print("Wrong input")
     exit
 
-
 while i>=1 or gameover:
-    print(f"You have {i} chances")
+    print(f"\nYou have {i} chances")
     n= int(input("Enter nuber : "))
     result= compare(n)
     print(result)
