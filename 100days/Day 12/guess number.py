@@ -28,7 +28,8 @@ while i>=1 or gameover:
     print(result)
     
     if i==1:
-        print("You are out of chance\nYou lose")
+        print("You are out of chance\n\nYou lose.....\n")
+        print(f"Correct Guess was {num}")
         break
     elif result=="Your guess is Right":
         print("\nYou won")

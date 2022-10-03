@@ -35,6 +35,3 @@ for char in password:
     rampass += char
 
 print(f"Youe password is {rampass}")  # random order
-
-print("\n\n....₵◉Đ€▷    ₿ ¥    †é✓△$   ^_~")
-print("Visit repobytejas.blogspot.com for more")

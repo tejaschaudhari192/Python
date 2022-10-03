@@ -2,8 +2,8 @@ import os
 import random
 game_over = True
 
-
-chosen_word = "chaudhari"
+words = ["chaudhari","mohit","mayur","kushal"]
+chosen_word = random.choice(words)
 
 # Testing code
 print(f'Pssst, the solution is {chosen_word}.')
