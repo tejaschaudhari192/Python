@@ -1,4 +1,3 @@
-import random
 
 
 logo = """
@@ -325,8 +324,3 @@ data = [
         'country': 'United States'
     }
 ]
-
-
-op_a=random.randint(0,len(data))
-sel=data[op_a]
-print(sel)

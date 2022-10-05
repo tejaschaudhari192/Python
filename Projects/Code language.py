@@ -1,3 +1,8 @@
+'''
+How to use :
+    Type encode 0r decode as per your choice
+'''
+
 from os import system
 
 
