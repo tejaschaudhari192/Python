@@ -375,5 +375,3 @@ while run:
         run=False
 
     print("Your Score =", score)
-    
-    
