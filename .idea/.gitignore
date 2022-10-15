@@ -1,0 +1,8 @@
+# Default ignored files
+
+*.xml
+*.zip
+*.iml
+.vscode/
+
+

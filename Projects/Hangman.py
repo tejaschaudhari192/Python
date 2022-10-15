@@ -3,7 +3,7 @@ import random
 from turtle import clear
 game_over = True
 
-words = ["chaudhari","mohit","mayur","kushal"]
+words = ["management","database","foundation","scientist","engineering","motivation","inspiration","distraction"]
 chosen_word = random.choice(words)
 
 # Testing code
