@@ -1,5 +1,5 @@
 
-#** Concepts used : Dictionary keys to print readable values , Funtions , Conditional statements
+# ** Concepts used : Dictionary keys to print readable values , Funtions , Conditional statements
 from cmath import log
 import os
 import random
@@ -327,53 +327,52 @@ accounts = [
     }
 ]
 
-def option (c):
+
+def option(c):
     """print info of insta account"""
 
     return f"{c['name']}, a {c['description']}, from {c['country']}"
 
-def check(c1,c2,guess):
+
+def check(c1, c2, guess):
     """Compare to accounts & Returns Boolean"""
 
     if c1['follower_count'] > c2['follower_count']:
-        return guess=="a"
+        return guess == "a"
     else:
-        return guess=="b"
+        return guess == "b"
 
-#Output Starts from here
+# Output Starts from here
+
 
 print(logo)
 
-c1=random.choice(accounts)
-c2=random.choice(accounts)
-while c1==c2:
-    c2=random.choice(accounts)
+c1 = random.choice(accounts)
+c2 = random.choice(accounts)
+while c1 == c2:
+    c2 = random.choice(accounts)
 
-score=0
+score = 0
 run = True
 while run:
-    c1=c2
-    c2=random.choice(accounts)
-    while c1==c2:
-        c2=random.choice(accounts)
+    c1 = c2
+    c2 = random.choice(accounts)
+    while c1 == c2:
+        c2 = random.choice(accounts)
 
-
-
-    print("Account A :",option(c1))
+    print("Account A :", option(c1))
     print(vs)
-    print("Account B :",option(c2))
+    print("Account B :", option(c2))
 
     guess = input("Guess 'A' or 'B' : ")
 
-    os. system('cls||clear') #clrscr
+    os. system('cls||clear')  # clrscr
     print(logo)
 
-    if check(c1,c2,guess):
-        score+=1
+    if check(c1, c2, guess):
+        score += 1
     else:
         print("Your guess was wrong")
-        run=False
+        run = False
 
     print("Your Score =", score)
-    
-    

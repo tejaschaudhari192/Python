@@ -43,19 +43,15 @@ ts = False
 
 power = "on"
 
-while power =="on":
-    system('cls');
+while power == "on":
+    system('cls')
     x = input("What would you like? (espresso/latte/cappuccino) : ").lower()
 
     # Transaction
 
-
     def user_money():
         usr_mny = int(input("Please Enter Coins : "))
         return usr_mny
-
-    
-    
 
     if x == "espresso":
         print("espresso")
@@ -74,7 +70,8 @@ while power =="on":
                 c -= 18
             elif um > cost:
                 change = um - cost
-                print(f"Transaction Successful\nHere is your Change : {change}")
+                print(
+                    f"Transaction Successful\nHere is your Change : {change}")
                 ts = True
                 mn += cost
                 w -= 50
@@ -102,7 +99,8 @@ while power =="on":
                 m -= 24
             elif um > cost:
                 change = um - cost
-                print(f"Transaction Successful\nHere is your Change : {change}")
+                print(
+                    f"Transaction Successful\nHere is your Change : {change}")
                 ts = True
                 mn += cost
                 w -= 200
@@ -112,7 +110,6 @@ while power =="on":
                 print("Insuficient Money")
         else:
             print("Insufficient Resources")
-
 
     elif x == "cappuccino":
         print("cappuccino")
@@ -134,7 +131,8 @@ while power =="on":
 
             elif um > cost:
                 change = um - cost
-                print(f"Transaction Successful\nHere is your Change : {change}")
+                print(
+                    f"Transaction Successful\nHere is your Change : {change}")
                 ts = True
                 mn += cost
                 w -= 250
@@ -155,12 +153,12 @@ while power =="on":
     else:
         print("Wrong Input !")
 
-
     if w <= 0:
         w = 0
     if m <= 0:
-        m=0
-    if c<=0:
-        c=0
-    
-    power = input("Press button to Toggle Machine !(Enter on / off) : ").lower()
+        m = 0
+    if c <= 0:
+        c = 0
+
+    power = input(
+        "Press button to Toggle Machine !(Enter on / off) : ").lower()
