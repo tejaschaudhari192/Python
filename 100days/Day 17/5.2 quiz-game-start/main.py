@@ -16,3 +16,9 @@ while quiz.quiz_continue():
 
 print('Quiz Completed !')
 print(f'Final Score {quiz.score}/{quiz.nofqns}')
+
+# for i in question_data:
+#     qsn = i["text"]
+#     ans=i["answer"]
+#     qd = qn(qsn,ans)
+#     QnBank.append(qd)
