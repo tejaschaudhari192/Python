@@ -4,12 +4,10 @@ page = turtle.Screen()
 page.setup(500, 400)
 clr = ['yellow', 'red', 'green', 'blue', 'orange']
 
-players = []
-
-
 def steps():
     return random.randint(0, 10)
 
+players = []
 
 pos = -100
 for i in range(0, 5):
