@@ -6,14 +6,12 @@ def color ():
 	g =  random.randint(0,255)
 	b =  random.randint(0,255)
 	return (r,g,b)
-
 	
 dirn = [0,90,180,270]
 
 teja = turtle.Turtle()
 teja.shape('turtle')
 teja.width(10)
-teja.speed('fastest')
 turtle.colormode(255)
 
 for i in range(1,100):
