@@ -1,3 +1,4 @@
+
 from secrets import choice
 from menu import Menu, MenuItem
 from coffee_maker import CoffeeMaker
@@ -10,7 +11,7 @@ itms = Menu()
 
 while on:
 	choice = input("What you want ?(espresso/latte/cappuccino) :")
-	if choice=='off':
+	if choice == 'off':
 		exit()
 	elif choice == 'report':
 		print(cm.report())

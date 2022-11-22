@@ -11,6 +11,8 @@ r for right
 
 import turtle
 
+turtle.Screen().title('Teja\'s Sketcher')
+
 def backword():
 	teja.backward(100)
 

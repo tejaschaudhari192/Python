@@ -5,7 +5,7 @@ def color ():
 	return (random.randint(0,255),random.randint(0,255),random.randint(0,255))
 
 # angle = int(input("Enter size of shift : "))
-angle = 3
+angle = 5 # Distance between circles
 
 turtle.colormode(255)
 teja = turtle.Turtle()

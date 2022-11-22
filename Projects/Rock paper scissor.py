@@ -71,5 +71,5 @@ while repeat:
         repeat=True
         system('cls')
     else:
-        repeat=False
+        repeat=True
     

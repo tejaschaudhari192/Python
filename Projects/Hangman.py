@@ -31,7 +31,7 @@ logo = '''
                                      "Y8bbdP"                         '''
 
 print(f"{logo}-----Made by Tejas ")
-print("\n\n\n\nYoy Have 6 Lives to play this game")
+print("\n\n\n\nYoy Have 6 Liṇves to play this game")
 print("Guess the correct letter in word to win the game")
 
 
