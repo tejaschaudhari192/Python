@@ -11,8 +11,6 @@ Game Rules :
 from os import system
 import random
 
-
-
 def compare(n):
     if n>num:
         return "too high"
@@ -60,5 +58,3 @@ while repeat:
     else:
         repeat=False
     system('cls')
-
-    
