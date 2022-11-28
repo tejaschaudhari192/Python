@@ -1,8 +1,18 @@
 from os import system
 
+def PrintMatrix(m, row_a, colm_a, row_b, colm_b):
+    
+    for i in range(row_a):
+        for j in range(colm_b):
+            print(m[i][j], end=" ")
+        print()
+    
 def MatAdd(a, b, row_a, colm_a, row_b, colm_b):
     '''Function to Add Matrix 
     arguments := rows and colums of both matrix'''
+    if row_a != row_b or colm_a != colm_b:
+        print('Dimention Error !!!');
+        exit();
     c = []
     for i in range(row_a):
         r = []
@@ -11,10 +21,7 @@ def MatAdd(a, b, row_a, colm_a, row_b, colm_b):
         c.append(r)
         
     print('\n[A] + [B] =')
-    for i in range(row_a):
-        for j in range(colm_a):
-            print(c[i][j], end=" ")
-        print()
+    PrintMatrix(c, row_a, colm_a, row_b, colm_b)
 
 def MatMult(a, b, row_a, colm_a, row_b, colm_b):
     '''Function to multiply Matrix 
@@ -30,15 +37,14 @@ def MatMult(a, b, row_a, colm_a, row_b, colm_b):
         d.append(x)
 
     print('\n[A] x [B] =')
-    for i in range(row_a):
-        for j in range(colm_b):
-            print(d[i][j], end=" ")
-        print()
+    PrintMatrix(d, row_a, colm_a, row_b, colm_b)
 
 menu = True
 
 while menu is True:
+    
     system('cls')
+    flag =0;
     print('\tMatrix Calculater by tejas')
     print('1. Addition of two matrices')
     print('2. Multiplication of two matrices')
@@ -59,38 +65,50 @@ while menu is True:
     row_b = int(input('\nEnter rows of second matrix : '))
     colm_b = int(input('Enter columns of second matrix : '))
 
-    if button == 3:
-        if row_a != row_b or colm_a != colm_b:
-            print('Invalid Matrices for this choice')
+    # Dimentions check
+    if button is 3 or button is 1:
+        if row_a is not row_b or colm_a is not colm_b:
+            print('Dimention Error !!')
+            flag = 2
+    elif button is 2:
+        if row_a is not colm_b :
+            print('Dimention Error !!')
+            flag = 2
+            
+        
+    if flag is not 2:  
+        # Matrix [A]
+        print('Enter elements of matrix [A] : ')
+        a = []
+        for r in range(row_a):
+            r = []
+            for i in range(colm_a):
+                r.append(int(input()))
+            a.append(r)
+        print('\n[A] =',a)
+
+        # Matrix [B]
+        print('Enter elements of matrix [B] : ')
+        b = []
+        for r in range(row_b):
+            r = []
+            for i in range(colm_b):
+                r.append(int(input()))
+            b.append(r)
+        print('\n[B] =',b)
+        
+        if button is 1:
+                MatAdd(a, b, row_a, colm_a, row_b, colm_b)
+        elif button is 2:
+                MatMult(a, b, row_a, colm_a, row_b, colm_b)
+        elif button is 3:
+                MatAdd(a, b, row_a, colm_a, row_b, colm_b)
+                MatMult(a, b, row_a, colm_a, row_b, colm_b)
+        elif button is 4:
             exit()
-
-    print('Enter elements of matrix [A] : ')
-    a = []
-    for r in range(row_a):
-        r = []
-        for i in range(colm_a):
-            r.append(int(input()))
-        a.append(r)
-    print(a)
-
-    print('Enter elements of matrix [B] : ')
-    b = []
-    for r in range(row_b):
-        r = []
-        for i in range(colm_b):
-            r.append(int(input()))
-        b.append(r)
-    print(b)
-    
-    if button is 1:
-            MatAdd(a, b, row_a, colm_a, row_b, colm_b)
-    if button is 2:
-            MatMult(a, b, row_a, colm_a, row_b, colm_b)
-    if button is 3:
-            MatAdd(a, b, row_a, colm_a, row_b, colm_b)
-            MatMult(a, b, row_a, colm_a, row_b, colm_b)
+                
     ask = input('\n\nDo you want to continue ? y/n...')
-    if ask == 'y':
+    if ask is 'y':
         menu = True
     else:
         menu = False

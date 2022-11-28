@@ -29,10 +29,6 @@ for r in range(r2):
 
 print(b)
 
-
-
-
-
 # matrix multiplication
 d = []
 for c in range(r1):
