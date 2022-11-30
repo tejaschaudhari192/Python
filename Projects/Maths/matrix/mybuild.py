@@ -42,7 +42,6 @@ def MatMult(a, b, row_a, colm_a, row_b, colm_b):
 menu = True
 
 while menu is True:
-    
     system('cls')
     flag =0;
     print('\tMatrix Calculater by tejas')
