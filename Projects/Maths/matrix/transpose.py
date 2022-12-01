@@ -12,7 +12,7 @@ c = int(input('Enter columns : '))
 for i in range(r):
     for j in range(c):
         print(f'Enter elemen {i+1}{j+1} : ')
-        m[i][j] =  int(input())
+        m[i][j] = int(input())
 
 print('Your matrix')
 for i in range(r):
