@@ -1,3 +1,4 @@
+from IPython.display import clear_output
 from os import system
 
 def MakeMatrix(rows, colms):
@@ -7,30 +8,37 @@ def MakeMatrix(rows, colms):
         for i in range(colms):
             r.append(int(input()))
         Mat.append(r)
-    return Mat;
+    return Mat
+
 
 def PrintMatrix(m, row_a, colm_a, row_b, colm_b):
-    
-    for i in range(row_a):
-        for j in range(colm_b):
-            print(m[i][j], end=" ")
-        print()
-    
-def MatAdd(A, B, row_a, colm_a, row_b, colm_b):
+
+    for i in m:
+        print(i)
+        # for j in range(colm_b):
+        #     print(m[i][j], end="  ")
+        # print()
+
+
+def MatAddSub(A, B, row_a, colm_a, row_b, colm_b,op):
     '''Function to Add Matrix 
     arguments := rows and colums of both matrix'''
     if row_a != row_b or colm_a != colm_b:
-        print('Dimention Error !!!');
-        exit();
+        print('Dimention Error !!!')
+        exit()
     c = []
     for i in range(row_a):
         r = []
         for j in range(colm_a):
-            r.append(A[i][j]+B[i][j])
+            if op is 1:
+                r.append(A[i][j]+B[i][j])
+            else:
+                r.append(A[i][j]-B[i][j])
         c.append(r)
-        
-    print('\n[A] + [B] =')
+
+    print('\n[A] + [B] =\n')
     PrintMatrix(c, row_a, colm_a, row_b, colm_b)
+
 
 def MatMult(A, B, row_a, colm_a, row_b, colm_b):
     '''Function to multiply Matrix 
@@ -45,67 +53,79 @@ def MatMult(A, B, row_a, colm_a, row_b, colm_b):
             x.append(e)
         d.append(x)
 
-    print('\n[A] x [B] =')
+    print('\n[A] x [B] =\n')
     PrintMatrix(d, row_a, colm_a, row_b, colm_b)
+
 
 menu = True
 
 while menu is True:
     system('cls')
-    flag = 0;
+    clear_output()
+    flag = 0
     print('Enter matrices :')
     # Matrix [A]
-    print(f'Enter elements of matrix [A] : ')
+    print(f'Enter Dimentions of matrix [A] : ')
     row_a = int(input('Enter rows of first matrix : '))
     colm_a = int(input('Enter columns of first matrix : '))
-    A = MakeMatrix(row_a, colm_a);
-    print('\n[A] =',A)
-    
+    print('Enter elements : ')
+    A = MakeMatrix(row_a, colm_a)
+    print('\n[A] =')
+    for i in A:
+        print(i)
     # Matrix [B]
-    print('Enter elements of matrix [B] : ')
-    row_b = int(input('\nEnter rows of second matrix : '))
+    print('\nEnter elements of matrix [B] : ')
+    row_b = int(input('Enter rows of second matrix : '))
     colm_b = int(input('Enter columns of second matrix : '))
+    print('Enter elements : ')
     B = MakeMatrix(row_b, colm_b)
-    print('\n[B] =',B)
-    
-
-    
-    
-    print('\tMatrix operations')
-    print('1. Addition of two matrices')
-    print('2. Multiplication of two matrices')
-    print('3. Both (rows and columns of two matrices must same)')
-    print('4. Exit')
-    button = int(input('Enter choice : '))
-    if button not in range(1, 5):
-        print('Wrong input');
-        flag = 1;
- 
-    # Dimentions check
-    if button is 3 or button is 1:
-        if row_a is not row_b or colm_a is not colm_b:
-            print('Dimention Error !!')
-            flag = 2
-    elif button is 2:
-        if row_a is not colm_b :
-            print('Dimention Error !!')
-            flag = 2
-              
-    if flag is not 2:  
-        print(f'Enter elements of matrix [A] : ')
-        A = MakeMatrix(row_a, colm_a)
+    print('\n[B] =')
+    for i in B:
+        print(i)
         
-        if button is 1:
-            MatAdd(A, B, row_a, colm_a, row_b, colm_b)
+    press = input('Enter any key to continue...')
+    back = False
+    while back is False:
+        system('cls')
+        clear_output()
+        print('\n\tMatrix operations')
+        print('\n1. Addition of two matrices')
+        print('2. Subtraction of two matrices')
+        print('3. Multiplication of two matrices')
+        print('4. Exit')
+        button = int(input('Enter choice : '))
+        if button not in range(1, 5):
+            print('Wrong input')
+            flag = 1
+
+        # Dimentions check
+        if button is 3 or button is 1:
+            if row_a is not row_b or colm_a is not colm_b:
+                print('Dimention Error !!')
+                flag = 2
         elif button is 2:
-            MatMult(A, B, row_a, colm_a, row_b, colm_b)
-        elif button is 3:
-            MatAdd(A, B, row_a, colm_a, row_b, colm_b)
-            MatMult(A, B, row_a, colm_a, row_b, colm_b)
-        elif button is 4:
-            exit()
-                
-    ask = input('\n\nDo you want to continue ? y/n...')
+            if row_a is not colm_b:
+                print('Dimention Error !!')
+                flag = 2
+        
+        # Operations
+        if flag is not 2:
+            if button is 1:
+                MatAddSub(A, B, row_a, colm_a, row_b, colm_b,1)
+            elif button is 2:
+                MatAdd(A, B, row_a, colm_a, row_b, colm_b,2)
+            elif button is 3:
+                MatMult(A, B, row_a, colm_a, row_b, colm_b)
+            elif button is 4:
+                exit()
+        askb = input('\n\nPerform another operation on same matrices ? y/n...')
+        if askb is 'y':
+            back = False
+        else:
+            back = True
+            
+
+    ask = input('\n\nEnter new matrices ? y/n...')
     if ask is 'y':
         menu = True
     else:

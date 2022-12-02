@@ -1,0 +1,1 @@
+r.append(int(input()))

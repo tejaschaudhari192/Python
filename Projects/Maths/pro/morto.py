@@ -8,8 +8,7 @@ def result(m,n):
 # rolling dice
 bet=0; 
 for i in range(1000):
-    res = result(1,6);
+    res = result(1,2);
     if res == 1:
         bet+=1;
 print(bet/1000)
-
