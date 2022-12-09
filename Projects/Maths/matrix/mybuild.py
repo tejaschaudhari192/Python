@@ -23,9 +23,6 @@ def PrintMatrix(m, row_a, colm_a, row_b, colm_b):
 def MatAddSub(A, B, row_a, colm_a, row_b, colm_b,op):
     '''Function to Add Matrix 
     arguments := rows and colums of both matrix'''
-    if row_a != row_b or colm_a != colm_b:
-        print('Dimention Error !!!')
-        exit()
     c = []
     for i in range(row_a):
         r = []
@@ -99,13 +96,13 @@ while menu is True:
             flag = 1
 
         # Dimentions check
-        if button is 3 or button is 1:
+        if button is 1 or button is 2:
             if row_a is not row_b or colm_a is not colm_b:
-                print('Dimention Error !!')
+                print('\n\tDimention Error !!')
                 flag = 2
-        elif button is 2:
+        elif button is 3:
             if row_a is not colm_b:
-                print('Dimention Error !!')
+                print('\n\tDimention Error !!')
                 flag = 2
         
         # Operations
@@ -113,7 +110,7 @@ while menu is True:
             if button is 1:
                 MatAddSub(A, B, row_a, colm_a, row_b, colm_b,1)
             elif button is 2:
-                MatAdd(A, B, row_a, colm_a, row_b, colm_b,2)
+                MatAddSub(A, B, row_a, colm_a, row_b, colm_b,2)
             elif button is 3:
                 MatMult(A, B, row_a, colm_a, row_b, colm_b)
             elif button is 4:
@@ -130,3 +127,8 @@ while menu is True:
         menu = True
     else:
         menu = False
+
+
+system('cls')
+clear_output()
+print('\n\nExiting the Program .....')
