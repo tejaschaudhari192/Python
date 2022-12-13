@@ -4,7 +4,7 @@ import numpy as np
 no =0
 n =60
 print('Finding probab;ity for same bday of two persons in room')
-print('\nBy formula :',1 - np.prod(1-np.arange(365/60)))
+print('\nBy formula :',1 - np.prod(1-np.arange(365/n)))
 print('\nBy morto carlo simulation :')
 
 for i in range(1000):
