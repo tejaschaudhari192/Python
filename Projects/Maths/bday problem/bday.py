@@ -20,3 +20,5 @@ for i in range(1000):
 P = no/1000
 print('Probablity : ',P)
 print(f'{P*100}% ')
+
+#coded by tejas
