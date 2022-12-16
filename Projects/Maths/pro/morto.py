@@ -13,7 +13,7 @@ for i in range(1000):
         bet+=1;
 print('dice :',bet/1000)
 
-# head / tail
+# Coin toss
 bet=0; 
 for i in range(1000):
     res = result(1,2);
