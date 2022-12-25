@@ -1,4 +1,3 @@
-# from IPython.display import clear_output
 from os import system
 
 def MakeMatrix(rows, colms):
@@ -16,14 +15,14 @@ def PrintMatrix(m):
     for i in m:
         print(i)
 
-
-def MatAddSub(A, B, row_a, colm_a, row_b, colm_b,op):
+print()
+def MatAddSub(A, B,op):
     '''Function to Add Matrix 
     arguments := rows and colums of both matrix'''
     c = []
-    for i in range(row_a):
+    for i in range(len(A)):
         r = []
-        for j in range(colm_a):
+        for j in range(len(A[0])):
             if op is 1:
                 r.append(A[i][j]+B[i][j])
             else:
@@ -31,16 +30,16 @@ def MatAddSub(A, B, row_a, colm_a, row_b, colm_b,op):
         c.append(r)
 
     print('\n[A] + [B] =\n')
-    PrintMatrix(c, row_a, colm_a, row_b, colm_b)
+    PrintMatrix(c)
 
 
-def MatMult(A, B, row_a, colm_a, row_b, colm_b):
+def MatMult(A, B):
     '''Function to multiply Matrix 
     arguments := rows and colums of both matrix'''
     d = []
-    for c in range(row_a):
+    for c in range(len(A)):
         x = []
-        for r in range(colm_b):
+        for r in range(len(A[0])):
             e = 0
             for k in range(colm_a):
                 e += A[c][k]*B[k][r]
@@ -48,7 +47,7 @@ def MatMult(A, B, row_a, colm_a, row_b, colm_b):
         d.append(x)
 
     print('\n[A] x [B] =\n')
-    PrintMatrix(d, row_a, colm_a, row_b, colm_b)
+    PrintMatrix(d)
 
 def Transpose(Mat):
     print("Your matrix : ")
@@ -72,7 +71,6 @@ menu = True
 
 while menu is True:
     system('cls')
-    # clear_output()
     flag = 0
     print('Enter matrices :')
     # Matrix [A]
@@ -97,7 +95,6 @@ while menu is True:
     back = False
     while back is False:
         system('cls')
-        # clear_output()
         print('\n\tMatrix operations')
         print('\n1. Addition of two matrices')
         print('2. Subtraction of two matrices')
@@ -122,21 +119,22 @@ while menu is True:
         # Operations
         if flag is not 2:
             if button is 1:
-                MatAddSub(A, B, row_a, colm_a, row_b, colm_b,1)
+                MatAddSub(A, B,1)
             elif button is 2:
-                MatAddSub(A, B, row_a, colm_a, row_b, colm_b,2)
+                MatAddSub(A, B,2)
             elif button is 3:
-                MatMult(A, B, row_a, colm_a, row_b, colm_b)
+                MatMult(A, B)
             elif button is 4:
                 ch = input('Enter a or b to get transpose of [A] [B]').lower()
-                if ch is 'a':
+                if ch == 'a':
                     Transpose(A)
-                elif ch is 'b':
+                elif ch == 'b':
                     Transpose(B)
                 else:
                     print('wrong input')
             elif button is 5:
                 exit()
+        flag = 0
         askb = input('\n\nPerform another operation on same matrices ? y/n...')
         if askb is 'y':
             back = False
@@ -144,11 +142,16 @@ while menu is True:
             back = True
             
     ask = input('\n\nEnter new matrices ? y/n...')
-    if ask is 'y':
+    if ask == 'y':
         menu = True
     else:
         menu = False
 
 system('cls')
-# clear_output()
 print('\n\nExiting the Program .....')
+
+
+
+
+a = [[1,2,3],[1,2,3]]
+print(a)

@@ -20,4 +20,3 @@ for i in range(1000):
     if res == 1:
         bet+=1;
 print('toss :',bet/1000)
-
