@@ -1,1 +1,0 @@
-print("Bhoju"[2])

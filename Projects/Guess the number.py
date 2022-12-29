@@ -1,5 +1,4 @@
 # Cocepts Used Functions & Conditional Statements
-
 '''
 Game Rules :
     0) This game have easy and hard mode
