@@ -7,6 +7,7 @@ Game Rules :
     3) If your guess greater then ouput will "too high"
     4) If small then "too low"
 '''
+
 from os import system
 import random
 

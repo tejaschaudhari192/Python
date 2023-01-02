@@ -3,8 +3,9 @@ c1 = int(input('Enter columns of first matrix : '))
 r2 = int(input('\nEnter rows of second matrix : '))
 c2 = int(input('Enter columns of second matrix : '))
 
-if (r1 != r2) or (c1 != c2):
-    print('invalid input')
+
+if (r1 is not r2) or (c1 is not c2):
+    print('Dimention error')
     exit()
 else:
     f = r1

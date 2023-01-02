@@ -18,7 +18,7 @@ for i in range(c):
     for j in range(r):
         row.append(0)
     mat_t.append(row)
-    
+
 for i in range(r):
     row = []
     for j in range(c):
