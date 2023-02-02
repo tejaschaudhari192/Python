@@ -1,4 +1,4 @@
-n = int(input("Enter number for table : "))
+n = int(input("Enter number : "))
 
 i = 1
 div = 0
@@ -14,3 +14,11 @@ if div == 2:
     print("prime")
 else:
     print("Not prime")
+    
+
+
+
+
+
+
+
