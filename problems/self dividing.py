@@ -1,8 +1,8 @@
-ep = int ( input ( 'Enter last digit' ) );
+n = int ( input ( 'Enter last digit' ) );
 
-for i in range(1, ep+1):
+for i in range(1, n+1):
     n = i; 
-    flag = 0;
+    flag = 0 ;
     while (n <= 0):
         rem = n % 10
         n = n//10  # floor division for round of digit
