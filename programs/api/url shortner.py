@@ -3,16 +3,19 @@ from tkinter import *
 
 api_url = "https://api.shrtco.de/v2/shorten"
 
-import urllib
+import urllib.request
 
-def internet_on():
+
+def internet_on(host="http://google.com"):
     try:
-        response=urllib.urlopen('http://www.google.com',timeout=20)
+        urllib.request.urlopen(host)  # Python 3.x
         return True
-    except urllib.URLError as err: pass
-    return False
+    except:
+        return False
+
 on = internet_on()
 print(on)
+
 
 def api_call():
     param = {"url": user_input.get()}
@@ -23,9 +26,12 @@ def api_call():
     try:
         shrt2 = all["result"]["short_link2"]
     except:
-        pass
+        output.delete('1.0',END)
+        output.insert("1.0", "Link Invalid")
     else:
-        pass
+        output.config(background="yellow", border=2, width=15, height=1)
+        output.delete('1.0',END)
+        output.insert("1.0", shrt2)
 
 
 window = Tk()
@@ -37,16 +43,22 @@ ask_input.grid(column=0, row=2)
 user_input = Entry(width=20)
 user_input.grid(column=1, row=2)
 
-generate = Button(text="Generate",foreground='yellow', background="green", command=api_call)
+generate = Button(
+    text="Generate", foreground="yellow", background="green", command=api_call
+)
 # generate.config(fo)
 generate.grid(column=0, row=3)
 
 show_op = Label(text="Shorten url : ")
 show_op.grid(column=0, row=4)
-output = Text(background="yellow", border=2, width=15, height=1)
+
+output = Text()
+output.config(width=15, height=1)
 output.grid(column=1, row=4)
 
-exit = Button(foreground='yellow',background="red", text="exit", command=window.destroy)
+exit = Button(
+    foreground="yellow", background="red", text="exit", command=window.destroy
+)
 exit.grid(row=5, column=0)
 
 window.mainloop()
