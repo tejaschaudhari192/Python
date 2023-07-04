@@ -1,4 +1,5 @@
 from tkinter import *
+import winsound
 
 # ---------------------------- CONSTANTS ------------------------------- #
 PINK = "#e2979c"
@@ -30,12 +31,15 @@ def start_timer():
     global REPS
     REPS += 1
     if REPS % 2 is 1:
+        if REPS > 1:
+            winsound.PlaySound("Projects/Resources/sounds/alarm-clock.wav",winsound.SND_FILENAME)
         coundown(WORK_MIN * 60)
         heading.config(text="Work", fg=GREEN)
     elif REPS is 8:
         coundown(LONG_BREAK_MIN * 60)
         heading.config(text="Break", fg=RED)
     else:
+        winsound.PlaySound("Projects/Resources/sounds/alarm-clock.wav",winsound.SND_FILENAME)
         coundown(SHORT_BREAK_MIN * 60)
         heading.config(text="Break", fg=RED)
 
@@ -54,7 +58,7 @@ def coundown(count):
 
     canva.itemconfig(timer_style, text=f"{min}:{sec}")
     if count > 0:
-        timer = window.after(1000, coundown, count - 1)
+        timer = window.after(10, coundown, count - 1)
     else:
         start_timer()
         mark = ""
