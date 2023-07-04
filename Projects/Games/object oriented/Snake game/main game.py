@@ -69,7 +69,7 @@ while game_over is False:
         or player.mouth.ycor() > 300
         or player.mouth.ycor() < -300
     ):
-        with open("high_score.txt") as file:
+        with open("high_score.txt",'w+') as file:
             sc = file.read()
         print(sc)
         game_over = True
