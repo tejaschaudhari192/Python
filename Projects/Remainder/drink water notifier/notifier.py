@@ -1,4 +1,5 @@
 import time,os
+import winsound
 from plyer import notification
 
 #------------------------------constants---------------------------
@@ -17,6 +18,7 @@ def call():
             message = MESSAGE,
             timeout = HOLD
         )
+        winsound.PlaySound("Projects/Resources/sounds/water_glass.wav",winsound.SND_FILENAME)
         time.sleep(60 * INTERVAL) 
 call()
 #------------------------------call--------------------------------
