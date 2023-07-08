@@ -40,7 +40,7 @@ def Post():
 
     request_headers = {"X-USER-TOKEN": TOKEN}
     response = requests.post(url=endpoint, json=request_body,headers=request_headers)
-    print(response.json)
+    print(response.text)
 
  
 def openWindow():

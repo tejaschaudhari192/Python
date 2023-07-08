@@ -18,7 +18,7 @@ def call():
             message = MESSAGE,
             timeout = HOLD
         )
-        winsound.PlaySound("C:\programming\Python\Projects\Resources\sounds\water_glass.wav",winsound.SND_FILENAME)
+        winsound.PlaySound("C:\programming\Python\Projects\Resources\sounds\pani.wav",winsound.SND_FILENAME)
         time.sleep(60 * INTERVAL) 
 call()
 #------------------------------call--------------------------------
