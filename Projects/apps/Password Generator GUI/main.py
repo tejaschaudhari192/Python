@@ -5,8 +5,36 @@ import pyperclip
 
 file_path = "C:/programming/Python/Projects/apps/Password Generator GUI/save_data.txt"
 
+
 def generate_password():
-    letters_small = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+    letters_small = [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "k",
+        "l",
+        "m",
+        "n",
+        "o",
+        "p",
+        "q",
+        "r",
+        "s",
+        "t",
+        "u",
+        "v",
+        "w",
+        "x",
+        "y",
+        "z",
+    ]
     letters_cap = [char.upper() for char in letters_small]
     letters_list = letters_small + letters_cap
 
@@ -26,10 +54,12 @@ def generate_password():
     password_input.insert(END, string=rampass)
     pyperclip.copy(rampass)
 
+
 def clear():
     website_input.delete(0, END)
     username_input.delete(0, END)
     password_input.delete(0, END)
+
 
 def save():
     website = website_input.get()
@@ -55,7 +85,9 @@ window.title("Teja's Bandwidth")
 # window.minsize(height=1000)
 # window.config(pad)
 
-img = PhotoImage(file="C:/programming/100days/Day 29/pass/mylogo_small.png")
+img = PhotoImage(
+    file="C:/programming/Python/Projects/apps/Password Generator GUI/mylogo_small.png"
+)
 canva = Canvas(height=200, width=260)
 canva.create_image(133, 100, image=img)
 canva.grid(column=1, row=0)
