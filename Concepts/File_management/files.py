@@ -1,0 +1,5 @@
+name = input("Enter your name: ")
+file = open(name+'.txt', "w")
+line = input("Enter text")
+file.write(line)
+file.close()
