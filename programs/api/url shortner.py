@@ -11,7 +11,7 @@ def internet_on(host="http://google.com"):
         urllib.request.urlopen(host)  # Python 3.x
         return True
     except:
-        return False
+        return Exception
 
 on = internet_on()
 print(on)
